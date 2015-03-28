@@ -12,7 +12,11 @@ Creating a new branch is quick & simple.
 
 Switched to a new branch 'dev'
 
+<<<<<<< HEAD
 
 on dev
 
 而碰巧你也对同样的文件作了修改，并试图推送
+=======
+"add /usr/bin/env"
+>>>>>>> 06cfbb42eef8424688df982b2f4d8947856b5787
