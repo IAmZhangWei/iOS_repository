@@ -14,3 +14,5 @@ Switched to a new branch 'dev'
 
 
 on dev
+
+而碰巧你也对同样的文件作了修改，并试图推送
