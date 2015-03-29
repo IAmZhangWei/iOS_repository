@@ -10,14 +10,14 @@
 	<string>大众点评</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F3FC77C35600A69FE3155F35E21E1ACE488420BF</key>
+		<key>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</key>
 		<string>https://github.com/IAmZhangWei/iOS_repository.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>大众点评/大众点评.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F3FC77C35600A69FE3155F35E21E1ACE488420BF</key>
+		<key>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F3FC77C35600A69FE3155F35E21E1ACE488420BF</string>
+	<string>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F3FC77C35600A69FE3155F35E21E1ACE488420BF</string>
+			<string>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS_repository</string>
 		</dict>
