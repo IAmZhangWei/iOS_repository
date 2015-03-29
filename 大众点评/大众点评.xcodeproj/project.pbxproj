@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC4A1C9F1AC7A1FB00F8784F /* Dev.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1C9E1AC7A1FB00F8784F /* Dev.m */; };
+		BC4A1CA51AC7A5EC00F8784F /* Master.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1CA41AC7A5EC00F8784F /* Master.m */; };
 		BCB517001AC6A6EB004F206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB516FF1AC6A6EB004F206C /* main.m */; };
 		BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517021AC6A6EB004F206C /* AppDelegate.m */; };
 		BCB517061AC6A6EB004F206C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517051AC6A6EB004F206C /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		BC4A1C9D1AC7A1FB00F8784F /* Dev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dev.h; sourceTree = "<group>"; };
 		BC4A1C9E1AC7A1FB00F8784F /* Dev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dev.m; sourceTree = "<group>"; };
+		BC4A1CA31AC7A5EC00F8784F /* Master.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Master.h; sourceTree = "<group>"; };
+		BC4A1CA41AC7A5EC00F8784F /* Master.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Master.m; sourceTree = "<group>"; };
 		BCB516FA1AC6A6EB004F206C /* 大众点评.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "大众点评.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB516FE1AC6A6EB004F206C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB516FF1AC6A6EB004F206C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				BCB516FD1AC6A6EB004F206C /* Supporting Files */,
 				BC4A1C9D1AC7A1FB00F8784F /* Dev.h */,
 				BC4A1C9E1AC7A1FB00F8784F /* Dev.m */,
+				BC4A1CA31AC7A5EC00F8784F /* Master.h */,
+				BC4A1CA41AC7A5EC00F8784F /* Master.m */,
 			);
 			path = "大众点评";
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */,
 				BCB517001AC6A6EB004F206C /* main.m in Sources */,
 				BC4A1C9F1AC7A1FB00F8784F /* Dev.m in Sources */,
+				BC4A1CA51AC7A5EC00F8784F /* Master.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
