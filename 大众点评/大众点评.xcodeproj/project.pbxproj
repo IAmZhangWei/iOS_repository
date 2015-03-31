@@ -21,7 +21,6 @@
 		BCB517001AC6A6EB004F206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB516FF1AC6A6EB004F206C /* main.m */; };
 		BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517021AC6A6EB004F206C /* AppDelegate.m */; };
 		BCB5170B1AC6A6EB004F206C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB5170A1AC6A6EB004F206C /* Images.xcassets */; };
-		BCB5170E1AC6A6EB004F206C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB5170C1AC6A6EB004F206C /* LaunchScreen.xib */; };
 		BCB5171A1AC6A6EB004F206C /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517191AC6A6EB004F206C /* ____Tests.m */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		BCB517011AC6A6EB004F206C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCB517021AC6A6EB004F206C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BCB5170A1AC6A6EB004F206C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BCB5170D1AC6A6EB004F206C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BCB517131AC6A6EB004F206C /* 大众点评Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "大众点评Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB517181AC6A6EB004F206C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB517191AC6A6EB004F206C /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
@@ -86,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FBA920E1ACAE7860012AA79 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
 		BC30CB9B1AC7E27D00FD138A /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +160,7 @@
 		BCB516F11AC6A6EB004F206C = {
 			isa = PBXGroup;
 			children = (
+				1FBA920E1ACAE7860012AA79 /* NetWorking */,
 				BC30CB9B1AC7E27D00FD138A /* images */,
 				BC7C5FAD1AC7D8840034C597 /* Controllers */,
 				BCB516FC1AC6A6EB004F206C /* 大众点评 */,
@@ -178,7 +184,6 @@
 				BCB517011AC6A6EB004F206C /* AppDelegate.h */,
 				BCB517021AC6A6EB004F206C /* AppDelegate.m */,
 				BCB5170A1AC6A6EB004F206C /* Images.xcassets */,
-				BCB5170C1AC6A6EB004F206C /* LaunchScreen.xib */,
 				BCB516FD1AC6A6EB004F206C /* Supporting Files */,
 			);
 			path = "大众点评";
@@ -290,7 +295,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCB5170E1AC6A6EB004F206C /* LaunchScreen.xib in Resources */,
 				A76267E71ACACEDA0011C98F /* personal_icon_send@2x.png in Resources */,
 				BCB5170B1AC6A6EB004F206C /* Images.xcassets in Resources */,
 				A76267E81ACACEDA0011C98F /* navibar_icon_arrow_down@2x.png in Resources */,
@@ -343,17 +347,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		BCB5170C1AC6A6EB004F206C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCB5170D1AC6A6EB004F206C /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		BCB5171B1AC6A6EB004F206C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -389,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -424,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
