@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarCon.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,22 @@
 
 @implementation AppDelegate
 
+- (void)dealloc
+{
+    self.window = nil;
+    [super dealloc];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    TabBarCon *tabBarC = [[TabBarCon alloc] init];
+    [self.window setRootViewController:tabBarC];
+    [tabBarC release];
+    
     return YES;
 }
 
