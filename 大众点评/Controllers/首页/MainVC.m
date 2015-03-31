@@ -6,11 +6,7 @@
 //  Copyright (c) 2015 张维. All rights reserved.
 //
 
-<<<<<<< HEAD
 
-=======
-/*fdfdsdssdsfds*/
->>>>>>> zhangwei
 #import "MainVC.h"
 
 @interface MainVC ()
