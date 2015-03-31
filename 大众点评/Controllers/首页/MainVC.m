@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 张维. All rights reserved.
 //
 
-/*fdfdsdssdsfds*/
 
 #import "MainVC.h"
 
