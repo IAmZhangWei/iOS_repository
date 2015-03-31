@@ -10,6 +10,8 @@
 
 @interface RootVC ()
 
+@property (nonatomic, retain) UITableView *tableView;
+
 @end
 
 @implementation RootVC
