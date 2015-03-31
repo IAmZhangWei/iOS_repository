@@ -11,7 +11,10 @@
 @interface RootVC ()
 
 @property (nonatomic, retain) UITableView *tableView;
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangwei
 @end
 
 @implementation RootVC
@@ -19,6 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
+
+    NSLog(@"%ld", _tableView.retainCount);
+    
+}
+
+- (void)dealloc
+{
+    self.tableView = nil;
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning {
