@@ -20,9 +20,11 @@
     // Do any additional setup after loading the view.
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    
     [self.view addSubview:self.tableView];
-
-    NSLog(@"%ld", _tableView.retainCount);
+    [self.tableView release];
+    
+    
     
 }
 

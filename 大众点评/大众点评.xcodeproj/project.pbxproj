@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC083C971ACA5677000C33D9 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC083C8D1ACA5677000C33D9 /* MJRefresh.bundle */; };
+		BC083C981ACA5677000C33D9 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC083C901ACA5677000C33D9 /* MJRefreshBaseView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC083C991ACA5677000C33D9 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC083C921ACA5677000C33D9 /* MJRefreshConst.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC083C9A1ACA5677000C33D9 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC083C941ACA5677000C33D9 /* MJRefreshFooterView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC083C9B1ACA5677000C33D9 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC083C961ACA5677000C33D9 /* MJRefreshHeaderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC30CB8B1AC7DC3900FD138A /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB8A1AC7DC3900FD138A /* RootVC.m */; };
 		BC30CB8E1AC7DC4E00FD138A /* RefreshVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB8D1AC7DC4E00FD138A /* RefreshVC.m */; };
 		BC30CB911AC7DC7300FD138A /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB901AC7DC7300FD138A /* MainVC.m */; };
@@ -49,6 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC083C8D1ACA5677000C33D9 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		BC083C8E1ACA5677000C33D9 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		BC083C8F1ACA5677000C33D9 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		BC083C901ACA5677000C33D9 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		BC083C911ACA5677000C33D9 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		BC083C921ACA5677000C33D9 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		BC083C931ACA5677000C33D9 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		BC083C941ACA5677000C33D9 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		BC083C951ACA5677000C33D9 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		BC083C961ACA5677000C33D9 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		BC30CB891AC7DC3900FD138A /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
 		BC30CB8A1AC7DC3900FD138A /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
 		BC30CB8C1AC7DC4E00FD138A /* RefreshVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshVC.h; sourceTree = "<group>"; };
@@ -111,6 +126,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC083C561ACA4B56000C33D9 /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				BC083C8C1ACA5677000C33D9 /* MJRefresh */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		BC083C8C1ACA5677000C33D9 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				BC083C8D1ACA5677000C33D9 /* MJRefresh.bundle */,
+				BC083C8E1ACA5677000C33D9 /* MJRefresh.h */,
+				BC083C8F1ACA5677000C33D9 /* MJRefreshBaseView.h */,
+				BC083C901ACA5677000C33D9 /* MJRefreshBaseView.m */,
+				BC083C911ACA5677000C33D9 /* MJRefreshConst.h */,
+				BC083C921ACA5677000C33D9 /* MJRefreshConst.m */,
+				BC083C931ACA5677000C33D9 /* MJRefreshFooterView.h */,
+				BC083C941ACA5677000C33D9 /* MJRefreshFooterView.m */,
+				BC083C951ACA5677000C33D9 /* MJRefreshHeaderView.h */,
+				BC083C961ACA5677000C33D9 /* MJRefreshHeaderView.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		BC30CB9B1AC7E27D00FD138A /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +232,7 @@
 		BCB516F11AC6A6EB004F206C = {
 			isa = PBXGroup;
 			children = (
+				BC083C561ACA4B56000C33D9 /* ThirdLib */,
 				BC30CB9B1AC7E27D00FD138A /* images */,
 				BC7C5FAD1AC7D8840034C597 /* Controllers */,
 				BCB516FC1AC6A6EB004F206C /* 大众点评 */,
@@ -331,6 +372,7 @@
 				BCB5170E1AC6A6EB004F206C /* LaunchScreen.xib in Resources */,
 				BC30CBB31AC7E3F900FD138A /* home_footbar_icon_found_pressed@3x.png in Resources */,
 				BC30CBBD1AC7E3F900FD138A /* home_footbar_icon_my@3x.png in Resources */,
+				BC083C971ACA5677000C33D9 /* MJRefresh.bundle in Resources */,
 				BC30CBB41AC7E3F900FD138A /* home_footbar_icon_found@2x.png in Resources */,
 				BC30CBB11AC7E3F900FD138A /* home_footbar_icon_dianping@3x.png in Resources */,
 				BC30CBB51AC7E3F900FD138A /* home_footbar_icon_found@3x.png in Resources */,
@@ -364,11 +406,15 @@
 			files = (
 				BC30CB8E1AC7DC4E00FD138A /* RefreshVC.m in Sources */,
 				BC7C5FBA1AC7DA350034C597 /* NavC.m in Sources */,
+				BC083C9B1ACA5677000C33D9 /* MJRefreshHeaderView.m in Sources */,
 				BC30CB971AC7DC9E00FD138A /* DiscoveryVC.m in Sources */,
+				BC083C9A1ACA5677000C33D9 /* MJRefreshFooterView.m in Sources */,
 				BC30CB9A1AC7DCBD00FD138A /* MineVC.m in Sources */,
 				BC30CB941AC7DC8700FD138A /* GroupVC.m in Sources */,
 				BC30CB911AC7DC7300FD138A /* MainVC.m in Sources */,
+				BC083C981ACA5677000C33D9 /* MJRefreshBaseView.m in Sources */,
 				BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */,
+				BC083C991ACA5677000C33D9 /* MJRefreshConst.m in Sources */,
 				BC7C5FB71AC7DA0D0034C597 /* TabBarCon.m in Sources */,
 				BC30CB8B1AC7DC3900FD138A /* RootVC.m in Sources */,
 				BCB517001AC6A6EB004F206C /* main.m in Sources */,
