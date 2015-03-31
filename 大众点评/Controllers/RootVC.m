@@ -11,7 +11,10 @@
 @interface RootVC ()
 
 @property (nonatomic, retain) UITableView *tableView;
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangwei
 @end
 
 @implementation RootVC
