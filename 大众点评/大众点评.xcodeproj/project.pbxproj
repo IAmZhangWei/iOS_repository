@@ -200,15 +200,8 @@
 				A700765A1ACA47DB00ABF9BE /* topic_u@2x.png */,
 				A700765B1ACA47DB00ABF9BE /* vip@3x.png */,
 			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		BC30CB9B1AC7E27D00FD138A /* images */ = {
-			isa = PBXGroup;
-			children = (
-				A70076341ACA47DB00ABF9BE /* images */,
-			);
-			path = images;
+			name = images;
+			path = images/images;
 			sourceTree = "<group>";
 		};
 		BC7C5FAD1AC7D8840034C597 /* Controllers */ = {
@@ -269,7 +262,7 @@
 		BCB516F11AC6A6EB004F206C = {
 			isa = PBXGroup;
 			children = (
-				BC30CB9B1AC7E27D00FD138A /* images */,
+				A70076341ACA47DB00ABF9BE /* images */,
 				BC7C5FAD1AC7D8840034C597 /* Controllers */,
 				BCB516FC1AC6A6EB004F206C /* 大众点评 */,
 				BCB517161AC6A6EB004F206C /* 大众点评Tests */,
