@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@class ProvinceResult;
-@class Car;
+
 @interface HelpNetWorking : NSObject
 
-//+ (NSURLSessionDataTask *)getProvinceDataWithBlock:(void (^)(ProvinceResult *provinceResult, NSError *error))block;
-
-+ (NSURLSessionDataTask *)getCarDataWithBlock:(void (^)(Car *car, NSError *error))block;
++ (NSURLSessionDataTask *)getCarDataWithBlock:(void (^)(NSObject *car, NSError *error))block;
 
 @end

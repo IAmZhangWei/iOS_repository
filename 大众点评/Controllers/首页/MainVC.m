@@ -10,6 +10,8 @@
 #import "MainVC.h"
 #import "ZKButton.h"
 
+#import "HelpNetWorking.h"
+
 @interface MainVC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -30,7 +32,9 @@
     
     [self setTableView];
     
-    
+    [HelpNetWorking getCarDataWithBlock:^(NSObject *car, NSError *error) {
+        ;
+    }];
 }
 
 #pragma mark --添加tableView
