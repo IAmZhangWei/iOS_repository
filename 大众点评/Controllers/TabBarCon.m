@@ -26,19 +26,23 @@
     
     UIImage *image = [UIImage imageNamed:@"home_footbar_icon_dianping@3x"];
     UIImage *selectedImage = [UIImage imageNamed:@"home_footbar_icon_dianping_pressed@3x"];
-    NavC *mainNav = (NavC *)[self navigationControllerWithViewController:[MainVC class] title:@"首页" image:image andSelectedImage:selectedImage];
+    NavC *mainNav = (NavC *)[self navigationControllerWithViewController:[MainVC class] title:nil image:image andSelectedImage:selectedImage];
+    mainNav.title = @"首页";
     
     image = [UIImage imageNamed:@"home_footbar_icon_group@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_group_pressed@3x"];
-    NavC *groupNav = (NavC *)[self navigationControllerWithViewController:[GroupVC class] title:@"团购" image:image andSelectedImage:selectedImage];
+    NavC *groupNav = (NavC *)[self navigationControllerWithViewController:[GroupVC class] title:nil image:image andSelectedImage:selectedImage];
+    groupNav.title = @"团购";
     
     image = [UIImage imageNamed:@"home_footbar_icon_found@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_found_pressed"];
-    NavC *discovNav = (NavC *)[self navigationControllerWithViewController:[DiscoveryVC class] title:@"发现" image:image andSelectedImage:selectedImage];
+    NavC *discovNav = (NavC *)[self navigationControllerWithViewController:[DiscoveryVC class] title:nil image:image andSelectedImage:selectedImage];
+    discovNav.title = @"发现";
     
     image = [UIImage imageNamed:@"home_footbar_icon_my@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_my_pressed@3x"];
-    UIViewController *mineNav = [self navigationControllerWithViewController:[MineVC class] title:@"我的" image:image andSelectedImage:selectedImage];
+    UIViewController *mineNav = [self navigationControllerWithViewController:[MineVC class] title:nil image:image andSelectedImage:selectedImage];
+    mineNav.title = @"我的";
     
     self.viewControllers = @[mainNav, groupNav, discovNav, mineNav];
     self.tabBar.tintColor = [UIColor orangeColor];
