@@ -6,16 +6,7 @@
 //  Copyright (c) 2015 张维. All rights reserved.
 //
 
-/**
- *  This is a Test !
- *
- *  @param <UIScrollViewDelegate <#<UIScrollViewDelegate description#>
- *  @param UITableViewDelegate   <#UITableViewDelegate description#>
- *  @param nonatomic             <#nonatomic description#>
- *  @param strong                <#strong description#>
- *
- *  @return <#return value description#>
- */
+
 #import "MainVC.h"
 #import "ZKButton.h"
 
