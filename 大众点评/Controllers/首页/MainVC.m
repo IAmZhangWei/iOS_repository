@@ -8,13 +8,7 @@
 
 /**
  *  This is a Test !
- *
- *  @param <UIScrollViewDelegate <#<UIScrollViewDelegate description#>
- *  @param UITableViewDelegate   <#UITableViewDelegate description#>
- *  @param nonatomic             <#nonatomic description#>
- *  @param strong                <#strong description#>
- *
- *  @return <#return value description#>
+张维
  */
 #import "MainVC.h"
 #import "ZKButton.h"
