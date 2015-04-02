@@ -7,7 +7,7 @@
 //
 
 #import "RootVC.h"
-
+/*master*/
 @interface MineVC : RootVC
 
 @end
