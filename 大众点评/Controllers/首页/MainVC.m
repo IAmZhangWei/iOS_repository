@@ -6,10 +6,7 @@
 //  Copyright (c) 2015 张维. All rights reserved.
 //
 
-/**
- *  This is a Test !
-张维
- */
+
 #import "MainVC.h"
 #import "ZKButton.h"
 
