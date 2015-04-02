@@ -7,7 +7,7 @@
 //
 
 #import "RootVC.h"
-/*zhangwei*/
+
 @interface MineVC : RootVC
 
 @end
