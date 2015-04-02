@@ -7,7 +7,11 @@
 //
 
 #import "RootVC.h"
+<<<<<<< HEAD
 /*master*/
+=======
+/*zhangwei*/
+>>>>>>> zhangwei
 @interface MineVC : RootVC
 
 @end
