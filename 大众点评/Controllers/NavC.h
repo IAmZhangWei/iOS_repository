@@ -10,4 +10,6 @@
 
 @interface NavC : UINavigationController
 
+@property (nonatomic, retain) UISearchBar *searchBar;
+
 @end

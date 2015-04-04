@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DPAPI.h"
+
 #import "TabBarCon.h"
 
 @interface AppDelegate ()
@@ -19,6 +21,27 @@
 {
     self.window = nil;
     [super dealloc];
+}
+
++ (AppDelegate *)instance {
+    return [[UIApplication sharedApplication] delegate];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _dpapi = [[DPAPI alloc] init];
+        _appKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"appkey"];
+        if (_appKey.length < 1) {
+            _appKey = kDPAppKey;
+        }
+        _appSecret = [[NSUserDefaults standardUserDefaults] valueForKey:@"appsecret"];
+        if (_appSecret.length < 1) {
+            _appSecret = kDPAppSecret;
+        }
+    }
+    return self;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -8,23 +8,19 @@
 
 #import "RootVC.h"
 
-@interface RootVC ()
-
-@property (nonatomic, retain) UITableView *tableView;
-
-@end
-
 @implementation RootVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    [self.view addSubview:self.tableView];
-
-    NSLog(@"%ld", _tableView.retainCount);
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     
+    self.tableView.showsVerticalScrollIndicator = YES;
+    
+    [self.view addSubview:self.tableView];
+    
+    [self.tableView release];
 }
 
 - (void)dealloc

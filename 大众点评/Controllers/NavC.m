@@ -14,9 +14,24 @@
 
 @implementation NavC
 
+@synthesize searchBar = _searchBar;
+
+- (void)dealloc
+{
+    self.searchBar = nil;
+    [super dealloc];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //添加搜索框
+    _searchBar = [[UISearchBar alloc] initWithFrame:[self getSearchBarFrame]];
+//    self.navigationItem
+}
+
+- (CGRect)getSearchBarFrame {
+    return CGRectMake(0, 0, 200, 35);
 }
 
 - (void)didReceiveMemoryWarning {

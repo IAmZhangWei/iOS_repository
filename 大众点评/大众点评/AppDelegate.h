@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DPAPI;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (retain, nonatomic) UIWindow *window;
 
+@property (readonly, nonatomic) DPAPI *dpapi;
+@property (strong, nonatomic) NSString *appKey;
+@property (strong, nonatomic) NSString *appSecret;
+
+
++ (AppDelegate *)instance;
 
 @end
 
