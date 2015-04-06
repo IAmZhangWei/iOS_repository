@@ -28,7 +28,7 @@
 - (void)dealloc
 {
     self.scrollView = nil;
-    self.pageControll = nil;
+    //    self.pageControll = nil;
     [super dealloc];
 }
 
@@ -41,7 +41,7 @@
     [self setTableView];
     
     //测试请求数据
-    //    [self testRequestData];
+    [self testRequestData];
 }
 
 /*
@@ -62,8 +62,6 @@
     NSDictionary *dic = (NSDictionary *)result;
     NSLog(@"%@", dic[@"businesses"]);
 }
-
-
 
 
 #pragma mark --设置tableView
@@ -97,7 +95,7 @@
     return view;
 }
 
-#pragma mark --添加tableView代理
+#pragma mark --添加tableViewDataSource代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -106,11 +104,26 @@
     return 20;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 50;
+    }
+    return 0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"猜你喜欢";
+    }
+    return nil;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *ident = @"cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
@@ -118,6 +131,7 @@
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident] autorelease];
     }
+    
     return cell;
 }
 
@@ -159,7 +173,10 @@
     
     for (int i = 0; i < 5; i++) {//i 表示页数
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * self.view.frame.size.width, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.scrollView.frame))];
+        [view setBackgroundColor:[UIColor whiteColor]];
         [_scrollView addSubview:view];
+        [view release];
+        
         for (int j = 0; j < 8; j++) {
             ZKButton *btn = [ZKButton buttonWithFrame:CGRectMake(gap + (j % 4) * (gap + btnW), (j / 4) * 70 + 15, btnW, btnW) type:UIButtonTypeCustom title:nil backgroundImage:nil andimage:imagesArr[i * 8 + j] andBlock:^(ZKButton *button) {
                 
@@ -174,6 +191,28 @@
             [view addSubview:btn];
         }
     }
+}
+
+- (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems {
+    
+    //添加左边按钮
+    UIImage *leftImage = [[UIImage imageNamed:@"navibar_icon_arrow_down"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [leftButton setTitle:@"北京" forState:UIControlStateNormal];
+    [leftButton setImage:leftImage forState:UIControlStateNormal];
+    [leftButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -25, 0, 0)];
+    [leftButton setImageEdgeInsets:UIEdgeInsetsMake(0, 35, 0, 0)];
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    [leftButton release];
+    
+    //添加右边按钮
+    UIImage *rightImage = [[UIImage imageNamed:@"Detail_ShareByMail_D"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 30)];
+    [rightButton setImage:rightImage forState:UIControlStateNormal];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    [rightButton release];
+    
+    return @[leftButtonItem, [leftBarButtonItems lastObject], rightButtonItem];
 }
 
 - (void)didReceiveMemoryWarning {

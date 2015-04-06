@@ -93,6 +93,10 @@
 		BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517021AC6A6EB004F206C /* AppDelegate.m */; };
 		BCB5170B1AC6A6EB004F206C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB5170A1AC6A6EB004F206C /* Images.xcassets */; };
 		BCB5171A1AC6A6EB004F206C /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517191AC6A6EB004F206C /* ____Tests.m */; };
+		BCBD1AA31AD257FF00C105E6 /* wm_mytakeaway_status_success_bkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBD1AA21AD257FF00C105E6 /* wm_mytakeaway_status_success_bkg@2x.png */; };
+		BCBD1AA71AD25FE000C105E6 /* Detail_ShareByMail_D@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBD1AA61AD25FE000C105E6 /* Detail_ShareByMail_D@2x.png */; };
+		BCBD1AAC1AD2662000C105E6 /* MainPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD1AAB1AD2662000C105E6 /* MainPageCell.m */; };
+		BCBD1AAF1AD2665700C105E6 /* MainPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD1AAE1AD2665700C105E6 /* MainPageModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +230,12 @@
 		BCB517131AC6A6EB004F206C /* 大众点评Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "大众点评Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB517181AC6A6EB004F206C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB517191AC6A6EB004F206C /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		BCBD1AA21AD257FF00C105E6 /* wm_mytakeaway_status_success_bkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wm_mytakeaway_status_success_bkg@2x.png"; sourceTree = "<group>"; };
+		BCBD1AA61AD25FE000C105E6 /* Detail_ShareByMail_D@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Detail_ShareByMail_D@2x.png"; sourceTree = "<group>"; };
+		BCBD1AAA1AD2662000C105E6 /* MainPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageCell.h; sourceTree = "<group>"; };
+		BCBD1AAB1AD2662000C105E6 /* MainPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageCell.m; sourceTree = "<group>"; };
+		BCBD1AAD1AD2665700C105E6 /* MainPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageModel.h; sourceTree = "<group>"; };
+		BCBD1AAE1AD2665700C105E6 /* MainPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +286,8 @@
 		BC30CB9B1AC7E27D00FD138A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BCBD1AA61AD25FE000C105E6 /* Detail_ShareByMail_D@2x.png */,
+				BCBD1AA21AD257FF00C105E6 /* wm_mytakeaway_status_success_bkg@2x.png */,
 				BC319AB61AD16D16005BBD3C /* drawbg@2x.png */,
 				BC0F2CC71ACFE8D700C7370B /* discount_u@2x.png */,
 				BC0F2CC51ACFE8C000C7370B /* booking_u@2x.png */,
@@ -437,6 +449,8 @@
 		BCB516F11AC6A6EB004F206C = {
 			isa = PBXGroup;
 			children = (
+				BCBD1AA81AD265C700C105E6 /* Models */,
+				BCBD1AA91AD265C700C105E6 /* Views */,
 				1FBA92791ACAED3C0012AA79 /* ThirdLib */,
 				BC30CB9B1AC7E27D00FD138A /* images */,
 				BC7C5FAD1AC7D8840034C597 /* Controllers */,
@@ -490,6 +504,24 @@
 				BCB517181AC6A6EB004F206C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCBD1AA81AD265C700C105E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD1AAD1AD2665700C105E6 /* MainPageModel.h */,
+				BCBD1AAE1AD2665700C105E6 /* MainPageModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCBD1AA91AD265C700C105E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD1AAA1AD2662000C105E6 /* MainPageCell.h */,
+				BCBD1AAB1AD2662000C105E6 /* MainPageCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +626,7 @@
 				1FBA924A1ACAE9480012AA79 /* home_footbar_icon_group_pressed@3x.png in Resources */,
 				1FBA924C1ACAE9480012AA79 /* home_footbar_icon_group@3x.png in Resources */,
 				BC0F2CC01ACFE80B00C7370B /* hotel_u@2x.png in Resources */,
+				BCBD1AA31AD257FF00C105E6 /* wm_mytakeaway_status_success_bkg@2x.png in Resources */,
 				1FBA924D1ACAE9480012AA79 /* home_footbar_icon_my_pressed@2x.png in Resources */,
 				1FBA92581ACAE9480012AA79 /* shoppingmall@3x.png in Resources */,
 				1FBA925A1ACAE9480012AA79 /* takeaway_u@3x.png in Resources */,
@@ -614,6 +647,7 @@
 				1FBA924E1ACAE9480012AA79 /* home_footbar_icon_my_pressed@3x.png in Resources */,
 				1FBA92371ACAE9480012AA79 /* bar_o@3x.png in Resources */,
 				1FBA92381ACAE9480012AA79 /* beauty@3x.png in Resources */,
+				BCBD1AA71AD25FE000C105E6 /* Detail_ShareByMail_D@2x.png in Resources */,
 				1FBA92391ACAE9480012AA79 /* book_menu_u@3x.png in Resources */,
 				1FBA925C1ACAE9480012AA79 /* vip@3x.png in Resources */,
 				BC0F2CC81ACFE8D700C7370B /* discount_u@2x.png in Resources */,
@@ -655,6 +689,7 @@
 				BC30CB8E1AC7DC4E00FD138A /* RefreshVC.m in Sources */,
 				BC0F2C851ACEBCA800C7370B /* MJRefreshBaseView.m in Sources */,
 				BC7206E91ACE346F0018FCFC /* SBJsonUTF8Stream.m in Sources */,
+				BCBD1AAC1AD2662000C105E6 /* MainPageCell.m in Sources */,
 				BC7206E31ACE346F0018FCFC /* SBJsonStreamParserAdapter.m in Sources */,
 				BC0F2C881ACEBCA800C7370B /* MJRefreshHeaderView.m in Sources */,
 				BC7206EA1ACE346F0018FCFC /* SBJsonWriter.m in Sources */,
@@ -670,6 +705,7 @@
 				BC7206E41ACE346F0018FCFC /* SBJsonStreamParserState.m in Sources */,
 				BC30CB911AC7DC7300FD138A /* MainVC.m in Sources */,
 				BC7206E01ACE346F0018FCFC /* SBJsonParser.m in Sources */,
+				BCBD1AAF1AD2665700C105E6 /* MainPageModel.m in Sources */,
 				BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */,
 				BC7C5FB71AC7DA0D0034C597 /* TabBarCon.m in Sources */,
 				BC30CB8B1AC7DC3900FD138A /* RootVC.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface RefreshVC : RootVC
 
+- (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems;
+
 @end

@@ -10,7 +10,7 @@
 #import "MJRefresh.h"
 
 
-@interface RefreshVC ()
+@interface RefreshVC () <UISearchBarDelegate>
 
 @property (nonatomic, retain) MJRefreshHeaderView *headerView;
 @property (nonatomic, retain) MJRefreshFooterView *footerView;
@@ -31,7 +31,7 @@
 }
 
 - (CGRect)getSearchBarFrame {
-    return CGRectMake(0, 0, 200, 35);
+    return CGRectMake(0, 0, 320, 35);
 }
 
 - (void)viewDidLoad {
@@ -39,12 +39,13 @@
     // Do any additional setup after loading the view.
     
     //添加搜索框
-    _searchBar = [[UISearchBar alloc] initWithFrame:[self getSearchBarFrame]];
-    [self.searchBar setBackgroundColor:[UIColor redColor]];
-    UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:_searchBar];
+    self.searchBar.delegate = self;
+    [self.searchBar release];
     
     self.navigationItem.leftBarButtonItems = @[searchBarItem];
-    self.navigationItem.leftBarButtonItems = [self addBarButtonItem:self.navigationItem];
+    self.navigationItem.leftBarButtonItems = [self addBarButtonItems:self.navigationItem.leftBarButtonItems];
     
     //添加刷新视图
     self.headerView = [MJRefreshHeaderView header];
@@ -83,9 +84,14 @@
     
 }
 
-- (NSArray *)addBarButtonItem:(UINavigationItem *)navigationItem {
-    NSLog(@"请在子类中重写此方法");
-    return navigationItem.leftBarButtonItems;
+- (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems {
+        NSLog(@"请在子类中重写此方法:%s",__FUNCTION__);
+    return leftBarButtonItems;
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
