@@ -7,7 +7,6 @@
 //
 
 #import "TabBarCon.h"
-#import "NavC.h"
 
 #import "MainVC.h"
 #import "GroupVC.h"
@@ -26,23 +25,22 @@
     
     UIImage *image = [UIImage imageNamed:@"home_footbar_icon_dianping@3x"];
     UIImage *selectedImage = [UIImage imageNamed:@"home_footbar_icon_dianping_pressed@3x"];
-    NavC *mainNav = (NavC *)[self navigationControllerWithViewController:[MainVC class] title:nil image:image andSelectedImage:selectedImage];
+    UINavigationController *mainNav = [self navigationControllerWithViewController:[MainVC class] title:nil image:image andSelectedImage:selectedImage];
     mainNav.title = @"首页";
     
     image = [UIImage imageNamed:@"home_footbar_icon_group@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_group_pressed@3x"];
-    NavC *groupNav = (NavC *)[self navigationControllerWithViewController:[GroupVC class] title:nil image:image andSelectedImage:selectedImage];
+    UINavigationController *groupNav = [self navigationControllerWithViewController:[GroupVC class] title:nil image:image andSelectedImage:selectedImage];
     groupNav.title = @"团购";
     
     image = [UIImage imageNamed:@"home_footbar_icon_found@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_found_pressed"];
-    NavC *discovNav = (NavC *)[self navigationControllerWithViewController:[DiscoveryVC class] title:nil image:image andSelectedImage:selectedImage];
+    UINavigationController *discovNav = [self navigationControllerWithViewController:[DiscoveryVC class] title:nil image:image andSelectedImage:selectedImage];
     discovNav.title = @"发现";
     
     image = [UIImage imageNamed:@"home_footbar_icon_my@3x"];
     selectedImage = [UIImage imageNamed:@"home_footbar_icon_my_pressed@3x"];
-    UIViewController *mineNav = [self navigationControllerWithViewController:[MineVC class] title:nil image:image andSelectedImage:selectedImage];
-    mineNav.title = @"我的";
+    UINavigationController *mineNav = [self navigationControllerWithViewController:[MineVC class] title:@"我的" image:image andSelectedImage:selectedImage];
     
     self.viewControllers = @[mainNav, groupNav, discovNav, mineNav];
     self.tabBar.tintColor = [UIColor orangeColor];
@@ -54,12 +52,7 @@
     UIViewController *viewController = [[VC alloc] init];
     [viewController setTitle:title];
     
-    UINavigationController *nav = nil;
-    if ([VC isSubclassOfClass:[MineVC class]]) {
-        nav = [[UINavigationController alloc] initWithRootViewController:viewController];
-    } else {
-        nav = [[NavC alloc] initWithRootViewController:viewController];
-    }
+    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     [viewController release];
     
     [nav.tabBarItem setImage:image];

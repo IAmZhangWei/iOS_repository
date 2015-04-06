@@ -14,14 +14,37 @@
 
 @property (nonatomic, retain) MJRefreshHeaderView *headerView;
 @property (nonatomic, retain) MJRefreshFooterView *footerView;
+@property (nonatomic, retain) UISearchBar *searchBar;
 
 @end
 
 @implementation RefreshVC
 
+@synthesize searchBar = _searchBar;
+
+- (void)dealloc
+{
+    self.searchBar = nil;
+    self.headerView = nil;
+    self.footerView = nil;
+    [super dealloc];
+}
+
+- (CGRect)getSearchBarFrame {
+    return CGRectMake(0, 0, 200, 35);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //添加搜索框
+    _searchBar = [[UISearchBar alloc] initWithFrame:[self getSearchBarFrame]];
+    [self.searchBar setBackgroundColor:[UIColor redColor]];
+    UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
+    
+    self.navigationItem.leftBarButtonItems = @[searchBarItem];
+    self.navigationItem.leftBarButtonItems = [self addBarButtonItem:self.navigationItem];
     
     //添加刷新视图
     self.headerView = [MJRefreshHeaderView header];
@@ -39,7 +62,7 @@
         //刷新状态变更时调用
         NSLog(@"刷新状态变更");
     }];
-    
+
     
     
     self.footerView = [MJRefreshFooterView footer];
@@ -60,26 +83,14 @@
     
 }
 
-- (void)dealloc
-{
-    self.headerView = nil;
-    self.footerView = nil;
-    [super dealloc];
+- (NSArray *)addBarButtonItem:(UINavigationItem *)navigationItem {
+    NSLog(@"请在子类中重写此方法");
+    return navigationItem.leftBarButtonItems;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

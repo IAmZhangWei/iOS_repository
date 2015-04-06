@@ -73,6 +73,7 @@
 		BC30CB941AC7DC8700FD138A /* GroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB931AC7DC8700FD138A /* GroupVC.m */; };
 		BC30CB971AC7DC9E00FD138A /* DiscoveryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB961AC7DC9E00FD138A /* DiscoveryVC.m */; };
 		BC30CB9A1AC7DCBD00FD138A /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC30CB991AC7DCBD00FD138A /* MineVC.m */; };
+		BC319AB71AD16D16005BBD3C /* drawbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC319AB61AD16D16005BBD3C /* drawbg@2x.png */; };
 		BC7206DD1ACE346F0018FCFC /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7206BF1ACE346F0018FCFC /* DPAPI.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC7206DE1ACE346F0018FCFC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7206C21ACE346F0018FCFC /* DPRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC7206DF1ACE346F0018FCFC /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7206C51ACE346F0018FCFC /* NSObject+SBJson.m */; };
@@ -88,7 +89,6 @@
 		BC7206E91ACE346F0018FCFC /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7206DA1ACE346F0018FCFC /* SBJsonUTF8Stream.m */; };
 		BC7206EA1ACE346F0018FCFC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7206DC1ACE346F0018FCFC /* SBJsonWriter.m */; };
 		BC7C5FB71AC7DA0D0034C597 /* TabBarCon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FB61AC7DA0D0034C597 /* TabBarCon.m */; };
-		BC7C5FBA1AC7DA350034C597 /* NavC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FB91AC7DA350034C597 /* NavC.m */; };
 		BCB517001AC6A6EB004F206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB516FF1AC6A6EB004F206C /* main.m */; };
 		BCB517031AC6A6EB004F206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB517021AC6A6EB004F206C /* AppDelegate.m */; };
 		BCB5170B1AC6A6EB004F206C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB5170A1AC6A6EB004F206C /* Images.xcassets */; };
@@ -184,6 +184,7 @@
 		BC30CB961AC7DC9E00FD138A /* DiscoveryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryVC.m; sourceTree = "<group>"; };
 		BC30CB981AC7DCBD00FD138A /* MineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		BC30CB991AC7DCBD00FD138A /* MineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		BC319AB61AD16D16005BBD3C /* drawbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drawbg@2x.png"; sourceTree = "<group>"; };
 		BC7206BE1ACE346F0018FCFC /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
 		BC7206BF1ACE346F0018FCFC /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
 		BC7206C01ACE346F0018FCFC /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
@@ -216,8 +217,6 @@
 		BC7206DC1ACE346F0018FCFC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		BC7C5FB51AC7DA0D0034C597 /* TabBarCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarCon.h; sourceTree = "<group>"; };
 		BC7C5FB61AC7DA0D0034C597 /* TabBarCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarCon.m; sourceTree = "<group>"; };
-		BC7C5FB81AC7DA350034C597 /* NavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavC.h; sourceTree = "<group>"; };
-		BC7C5FB91AC7DA350034C597 /* NavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavC.m; sourceTree = "<group>"; };
 		BCB516FA1AC6A6EB004F206C /* 大众点评.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "大众点评.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB516FE1AC6A6EB004F206C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB516FF1AC6A6EB004F206C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -277,6 +276,7 @@
 		BC30CB9B1AC7E27D00FD138A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BC319AB61AD16D16005BBD3C /* drawbg@2x.png */,
 				BC0F2CC71ACFE8D700C7370B /* discount_u@2x.png */,
 				BC0F2CC51ACFE8C000C7370B /* booking_u@2x.png */,
 				BC0F2CC31ACFE83E00C7370B /* film_u@2x.png */,
@@ -388,8 +388,6 @@
 				BC7C5FC11AC7DADF0034C597 /* 首页 */,
 				BC7C5FB51AC7DA0D0034C597 /* TabBarCon.h */,
 				BC7C5FB61AC7DA0D0034C597 /* TabBarCon.m */,
-				BC7C5FB81AC7DA350034C597 /* NavC.h */,
-				BC7C5FB91AC7DA350034C597 /* NavC.m */,
 				BC30CB891AC7DC3900FD138A /* RootVC.h */,
 				BC30CB8A1AC7DC3900FD138A /* RootVC.m */,
 				BC30CB8C1AC7DC4E00FD138A /* RefreshVC.h */,
@@ -611,6 +609,7 @@
 				1FBA92401ACAE9480012AA79 /* groupon_u@3x.png in Resources */,
 				BC0F2CBA1ACFE7A400C7370B /* relax@3x.png in Resources */,
 				1FBA92591ACAE9480012AA79 /* snack_u@3x.png in Resources */,
+				BC319AB71AD16D16005BBD3C /* drawbg@2x.png in Resources */,
 				BC0F2CB61ACFE78800C7370B /* snack_u@2x.png in Resources */,
 				1FBA924E1ACAE9480012AA79 /* home_footbar_icon_my_pressed@3x.png in Resources */,
 				1FBA92371ACAE9480012AA79 /* bar_o@3x.png in Resources */,
@@ -657,7 +656,6 @@
 				BC0F2C851ACEBCA800C7370B /* MJRefreshBaseView.m in Sources */,
 				BC7206E91ACE346F0018FCFC /* SBJsonUTF8Stream.m in Sources */,
 				BC7206E31ACE346F0018FCFC /* SBJsonStreamParserAdapter.m in Sources */,
-				BC7C5FBA1AC7DA350034C597 /* NavC.m in Sources */,
 				BC0F2C881ACEBCA800C7370B /* MJRefreshHeaderView.m in Sources */,
 				BC7206EA1ACE346F0018FCFC /* SBJsonWriter.m in Sources */,
 				BC30CB971AC7DC9E00FD138A /* DiscoveryVC.m in Sources */,
