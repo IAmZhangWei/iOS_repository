@@ -9,14 +9,15 @@
 
 #import "MainVC.h"
 #import "ZKButton.h"
+#import "MainPageModel.h"
 
 #import "DPAPI.h"
 
 @interface MainVC () <UITableViewDelegate, UITableViewDataSource, DPRequestDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-//@property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UIPageControl *pageControll;
+@property (nonatomic, retain) NSMutableArray *models;
 
 @end
 
@@ -24,12 +25,21 @@
 
 @synthesize scrollView = _scrollView;
 @synthesize pageControll = _pageControll;
+@synthesize models = _models;
 
 - (void)dealloc
 {
     self.scrollView = nil;
-    //    self.pageControll = nil;
+    self.pageControll = nil;
+    self.models = nil;
     [super dealloc];
+}
+
+- (NSMutableArray *)models {
+    if (_models == nil) {
+        _models = [[NSMutableArray alloc] init];
+    }
+    return _models;
 }
 
 - (void)viewDidLoad {
@@ -37,17 +47,12 @@
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    
     [self setTableView];
     
-    //测试请求数据
-    [self testRequestData];
+    [self requestData];
 }
 
-/*
- category=美食&city=上海&latitude=31.18268013000488&longitude=121.42769622802734&sort=1&limit=20&offset_type=1&out_offset_type=1&platform=2
- */
-- (void)testRequestData {
+- (void)requestData {
     NSMutableDictionary *dic = (NSMutableDictionary *)@{@"city": @"上海", @"category":@"美食", @"latitude":@31.18268013000488, @"longitude":@121.42769622802734, @"sort":@1, @"limit":@20, @"offset_type":@1, @"out_offset_type":@1, @"platform":@2};
     
     [[DPAPI alloc] requestWithURL:@"v1/business/find_businesses" params:dic delegate:self];
@@ -60,7 +65,13 @@
 
 - (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result {
     NSDictionary *dic = (NSDictionary *)result;
-    NSLog(@"%@", dic[@"businesses"]);
+    
+    NSArray *arr = dic[@"businesses"];
+    for (NSDictionary *dic in arr) {
+        MainPageModel *model = [MainPageModel mainPageModelWithDic:dic];
+        [self.models addObject:model];
+    }
+    [self.tableView reloadData];
 }
 
 
@@ -96,12 +107,9 @@
 }
 
 #pragma mark --添加tableViewDataSource代理
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.models.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -131,6 +139,8 @@
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident] autorelease];
     }
+        MainPageModel *model = self.models[indexPath.row];
+        cell.textLabel.text = model.address;
     
     return cell;
 }

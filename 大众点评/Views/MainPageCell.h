@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MainPageModel;
 
 @interface MainPageCell : UITableViewCell
+
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UILabel *priceLabel;
+@property (nonatomic, retain) UILabel *addressLabel;
+
+@property (nonatomic, retain) MainPageModel *model;
 
 @end

@@ -14,11 +14,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"drawbg"] forBarMetrics:UIBarMetricsDefault];
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
-    [self.tableView release];
+
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"wm_mytakeaway_status_success_bkg"] forBarMetrics:UIBarMetricsDefault];
 }

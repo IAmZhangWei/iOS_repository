@@ -51,6 +51,11 @@
                BlueprintName = "&#x5927;&#x4f17;&#x70b9;&#x8bc4;Tests"
                ReferencedContainer = "container:&#x5927;&#x4f17;&#x70b9;&#x8bc4;.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "____Tests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
@@ -83,6 +88,11 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction

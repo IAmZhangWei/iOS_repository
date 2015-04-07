@@ -13,7 +13,9 @@
 @property (nonatomic, copy) NSString *photo_url;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger avg_price;
+@property (nonatomic, copy) NSString *address;
 
++ (MainPageModel *)mainPageModelWithDic:(NSDictionary *)dic;
 
 
 @end
