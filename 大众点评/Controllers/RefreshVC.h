@@ -7,8 +7,13 @@
 //
 
 #import "RootVC.h"
+#import "MJRefresh.h"
 
 @interface RefreshVC : RootVC
+
+@property (nonatomic, retain) MJRefreshHeaderView *headerView;
+@property (nonatomic, retain) MJRefreshFooterView *footerView;
+
 
 - (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems;
 

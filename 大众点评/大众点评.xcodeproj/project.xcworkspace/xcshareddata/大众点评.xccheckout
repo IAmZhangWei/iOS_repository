@@ -12,6 +12,10 @@
 	<dict>
 		<key>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</key>
 		<string>https://github.com/IAmZhangWei/iOS_repository.git</string>
+		<key>b3ea32e5-604c-4fca-b5db-6ae888a3e4b3++5760</key>
+		<string>http://yangj.5166.info/1000phone/iOS/trunk/iOS/Network/douban/codes/00-%25E7%25BD%2591%25E7%25BB%259C0-JSON%25E8%25A7%25A3%25E6%259E%2590/0-DoubanBoo/SDWebImage</string>
+		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++4837</key>
+		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/MD5</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>大众点评/大众点评.xcodeproj</string>
@@ -19,6 +23,17 @@
 	<dict>
 		<key>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</key>
 		<string>../../..</string>
+		<key>b3ea32e5-604c-4fca-b5db-6ae888a3e4b3++5760</key>
+		<string>../../../%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84/SDWebImage/</string>
+		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++4837</key>
+		<string>../../../../../Desktop/%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/MD5</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>b3ea32e5-604c-4fca-b5db-6ae888a3e4b3++5760</key>
+		<string>http://yangj.5166.info/1000phone</string>
+		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++4837</key>
+		<string>http://192.168.88.8/qfproj</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/IAmZhangWei/iOS_repository.git</string>
@@ -35,6 +50,22 @@
 			<string>F26FAA87D2E6668DC5E93FC9210C69CDBA4F58F3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS_repository</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>d3b33442-203a-4b98-a023-85834f8d8bd5++4837</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MD5</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>b3ea32e5-604c-4fca-b5db-6ae888a3e4b3++5760</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SDWebImage</string>
 		</dict>
 	</array>
 </dict>

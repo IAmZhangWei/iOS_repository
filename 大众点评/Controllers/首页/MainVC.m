@@ -10,6 +10,7 @@
 #import "MainVC.h"
 #import "ZKButton.h"
 #import "MainPageModel.h"
+#import "MainPageCell.h"
 
 #import "DPAPI.h"
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControll;
 @property (nonatomic, retain) NSMutableArray *models;
+@property (nonatomic, assign) NSUInteger page;
 
 @end
 
@@ -45,15 +47,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.page = 1;
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self setTableView];
     
     [self requestData];
+    
+    [self addRefreshEvent];
+}
+
+- (void)addRefreshEvent {
+    
+    [self.headerView setBeginRefreshingBlock:^(MJRefreshBaseView *refreshView) {
+        //开始刷新
+        NSLog(@"开始刷新头部");
+        [self requestData];
+    }];
+    [self.headerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
+        //刷新完毕
+        NSLog(@"头部刷新完毕");
+    }];
+    [self.headerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
+        //刷新状态变更时调用
+        NSLog(@"头部刷新状态变更");
+    }];
+    
+    
+    
+    self.footerView = [MJRefreshFooterView footer];
+    self.footerView.scrollView = self.tableView;
+    [self.footerView setBeginRefreshingBlock:^(MJRefreshBaseView *refreshView) {
+        //开始刷新
+        NSLog(@"开始刷新尾部");
+        self.page++;
+        [self requestData];
+    }];
+    [self.footerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
+        //刷新完毕
+        NSLog(@"尾部刷新完毕");
+    }];
+    [self.footerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
+        //刷新状态变更时调用
+        NSLog(@"尾部刷新状态变更");
+    }];
 }
 
 - (void)requestData {
-    NSMutableDictionary *dic = (NSMutableDictionary *)@{@"city": @"上海", @"category":@"美食", @"latitude":@31.18268013000488, @"longitude":@121.42769622802734, @"sort":@1, @"limit":@20, @"offset_type":@1, @"out_offset_type":@1, @"platform":@2};
+    NSMutableDictionary *dic = (NSMutableDictionary *)@{@"city": @"上海", @"category":@"美食", @"latitude":@31.18268013000488, @"longitude":@121.42769622802734, @"sort":@1, @"limit":@20, @"offset_type":@1, @"out_offset_type":@1, @"platform":@2, @"page":[NSNumber numberWithUnsignedInteger:self.page]};
     
     [[DPAPI alloc] requestWithURL:@"v1/business/find_businesses" params:dic delegate:self];
 }
@@ -72,6 +113,9 @@
         [self.models addObject:model];
     }
     [self.tableView reloadData];
+    
+    [self.footerView endRefreshing];
+    [self.headerView endRefreshing];
 }
 
 
@@ -127,21 +171,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *ident = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
+    MainPageCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
     
     if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident] autorelease];
+        cell = [[MainPageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
     }
-        MainPageModel *model = self.models[indexPath.row];
-        cell.textLabel.text = model.address;
-    
+    cell.model = self.models[indexPath.row];
     return cell;
 }
 

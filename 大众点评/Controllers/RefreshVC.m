@@ -7,13 +7,10 @@
 //
 
 #import "RefreshVC.h"
-#import "MJRefresh.h"
 
 
 @interface RefreshVC () <UISearchBarDelegate>
 
-@property (nonatomic, retain) MJRefreshHeaderView *headerView;
-@property (nonatomic, retain) MJRefreshFooterView *footerView;
 @property (nonatomic, retain) UISearchBar *searchBar;
 
 @end
@@ -50,37 +47,6 @@
     //添加刷新视图
     self.headerView = [MJRefreshHeaderView header];
     self.headerView.scrollView = self.tableView;
-    [self.headerView setBeginRefreshingBlock:^(MJRefreshBaseView *refreshView) {
-        //开始刷新
-        NSLog(@"开始刷新");
-        [self.headerView endRefreshing];
-    }];
-    [self.headerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
-        //刷新完毕
-        NSLog(@"刷新完毕");
-    }];
-    [self.headerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
-        //刷新状态变更时调用
-        NSLog(@"刷新状态变更");
-    }];
-
-    
-    
-    self.footerView = [MJRefreshFooterView footer];
-    self.footerView.scrollView = self.tableView;
-    [self.footerView setBeginRefreshingBlock:^(MJRefreshBaseView *refreshView) {
-        //开始刷新
-        NSLog(@"开始刷新");
-        [self.footerView endRefreshing];
-    }];
-    [self.footerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
-        //刷新完毕
-        NSLog(@"刷新完毕");
-    }];
-    [self.footerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
-        //刷新状态变更时调用
-        NSLog(@"刷新状态变更");
-    }];
     
 }
 

@@ -13,8 +13,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    CGRect rect = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetHeight(self.tabBarController.tabBar.frame));
+    _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped];
     self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
 
