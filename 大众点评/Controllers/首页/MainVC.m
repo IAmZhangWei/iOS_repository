@@ -42,7 +42,7 @@
 
 - (NSMutableArray *)models {
     if (_models == nil) {
-        _models = [[NSMutableArray alloc] init];
+        _models = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return _models;
 }
@@ -58,6 +58,7 @@
     [self getData];
     
     [self addRefreshEvent];
+    
 }
 
 - (void)addRefreshEvent {
@@ -109,7 +110,7 @@
     }
     
     //如果是头部刷新或初始化
-    NSData *data = nil;[[ZWDataCache sharedDataCache] getDataWithDataName:MAINPAGE];
+    NSData *data = [[ZWDataCache sharedDataCache] getDataWithDataName:MAINPAGE];
     if (data) {
         self.models = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         [self.tableView reloadData];
@@ -125,8 +126,8 @@
 - (void)requestData {
     if (self.headerView.isRefreshing) {
         self.page = 1;
-        [self.models release];
-        self.models = nil;
+        [self.models removeAllObjects];
+        [self.tableView reloadData];
     }
     NSMutableDictionary *dic = (NSMutableDictionary *)@{@"city": @"上海", @"category":@"美食", @"latitude":@31.18268013000488, @"longitude":@121.42769622802734, @"sort":@1, @"limit":@20, @"offset_type":@1, @"out_offset_type":@1, @"platform":@2, @"page":[NSNumber numberWithUnsignedInteger:self.page]};
     
