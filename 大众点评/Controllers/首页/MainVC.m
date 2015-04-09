@@ -11,13 +11,16 @@
 #import "ZKButton.h"
 #import "MainPageModel.h"
 #import "MainPageCell.h"
+#import "ZWDataCache.h"
 
 #import "DPAPI.h"
 
+#define MAINPAGE @"mainPageData"
+
 @interface MainVC () <UITableViewDelegate, UITableViewDataSource, DPRequestDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIPageControl *pageControll;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) UIPageControl *pageControll;
 @property (nonatomic, retain) NSMutableArray *models;
 @property (nonatomic, assign) NSUInteger page;
 
@@ -52,7 +55,7 @@
     
     [self setTableView];
     
-    [self requestData];
+    [self getData];
     
     [self addRefreshEvent];
 }
@@ -62,7 +65,6 @@
     [self.headerView setBeginRefreshingBlock:^(MJRefreshBaseView *refreshView) {
         //开始刷新
         NSLog(@"开始刷新头部");
-        [self requestData];
     }];
     [self.headerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
         //刷新完毕
@@ -71,8 +73,10 @@
     [self.headerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
         //刷新状态变更时调用
         NSLog(@"头部刷新状态变更");
+        if (refreshView.isRefreshing) {
+            [self getData];
+        }
     }];
-    
     
     
     self.footerView = [MJRefreshFooterView footer];
@@ -81,7 +85,6 @@
         //开始刷新
         NSLog(@"开始刷新尾部");
         self.page++;
-        [self requestData];
     }];
     [self.footerView setEndStateChangeBlock:^(MJRefreshBaseView *refreshView) {
         //刷新完毕
@@ -90,10 +93,41 @@
     [self.footerView setRefreshStateChangeBlock:^(MJRefreshBaseView *refreshView, MJRefreshState state) {
         //刷新状态变更时调用
         NSLog(@"尾部刷新状态变更");
+        if (refreshView.isRefreshing) {
+            [self getData];
+        }
     }];
 }
 
+//从缓存或网络获取数据
+- (void)getData {
+    
+    //如果是尾部刷新
+    if (self.footerView.isRefreshing) {
+        [self requestData];
+        return;
+    }
+    
+    //如果是头部刷新或初始化
+    NSData *data = nil;[[ZWDataCache sharedDataCache] getDataWithDataName:MAINPAGE];
+    if (data) {
+        self.models = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [self.tableView reloadData];
+        if (self.headerView.isRefreshing) {
+            [self.headerView endRefreshing];
+        }
+        return;
+    } else {
+        [self requestData];
+    }
+}
+
 - (void)requestData {
+    if (self.headerView.isRefreshing) {
+        self.page = 1;
+        [self.models release];
+        self.models = nil;
+    }
     NSMutableDictionary *dic = (NSMutableDictionary *)@{@"city": @"上海", @"category":@"美食", @"latitude":@31.18268013000488, @"longitude":@121.42769622802734, @"sort":@1, @"limit":@20, @"offset_type":@1, @"out_offset_type":@1, @"platform":@2, @"page":[NSNumber numberWithUnsignedInteger:self.page]};
     
     [[DPAPI alloc] requestWithURL:@"v1/business/find_businesses" params:dic delegate:self];
@@ -112,12 +146,25 @@
         MainPageModel *model = [MainPageModel mainPageModelWithDic:dic];
         [self.models addObject:model];
     }
-    [self.tableView reloadData];
     
-    [self.footerView endRefreshing];
-    [self.headerView endRefreshing];
+    [self performSelectorOnMainThread:@selector(refreshTableView) withObject:nil waitUntilDone:YES];
 }
 
+- (void)refreshTableView {
+    [self.tableView reloadData];
+    
+    if (self.headerView.isRefreshing) {
+        [self.headerView endRefreshing];
+    }
+    
+    if (self.footerView.isRefreshing) {
+        [self.footerView endRefreshing];
+    }
+    
+    //缓存数据
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.models];
+    [[ZWDataCache sharedDataCache] saveData:data withDataName:MAINPAGE];
+}
 
 #pragma mark --设置tableView
 - (void)setTableView {

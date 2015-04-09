@@ -3,10 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MainVC refreshTableView]:MainVC.m">
+      </ContextState>
+      <ContextState
          contextName = "-[MainPageCell initWithStyle:reuseIdentifier:]:MainPageCell.m">
          <PersistentStrings>
             <PersistentString
                value = "CGRectGetMaxY(self.priceLabel.frame)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainPageCell setModel:]:MainPageCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainVC request:didFinishLoadingWithResult:]:MainVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.models">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

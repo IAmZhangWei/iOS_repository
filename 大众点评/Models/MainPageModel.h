@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MainPageModel : NSObject
+@interface MainPageModel : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *photo_url;
 @property (nonatomic, copy) NSString *name;

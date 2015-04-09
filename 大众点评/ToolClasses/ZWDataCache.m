@@ -34,14 +34,14 @@ static ZWDataCache *cache = nil;
     }
 }
 
-- (void)saveData:(NSData *)data withUrlString:(NSString *)url {
+- (void)saveData:(NSData *)data withDataName:(NSString *)dataName {
     NSString *path = [NSString stringWithFormat:@"%@/Documents/DataCache/", NSHomeDirectory()];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     
-    NSString *str = [url MD5Hash];
+    NSString *str = [dataName MD5Hash];
     
     BOOL isSuc = [data writeToFile:[NSString stringWithFormat:@"%@/%@", path, str] atomically:YES];
     
@@ -52,8 +52,8 @@ static ZWDataCache *cache = nil;
     }
 }
 
-- (NSData *)getDataWithUrlString:(NSString *)url {
-    NSString *path = [NSString stringWithFormat:@"%@/Documents/DataCache/%@", NSHomeDirectory(), [url MD5Hash]];
+- (NSData *)getDataWithDataName:(NSString *)dataName {
+    NSString *path = [NSString stringWithFormat:@"%@/Documents/DataCache/%@", NSHomeDirectory(), [dataName MD5Hash]];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     

@@ -17,7 +17,6 @@
     _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped];
     self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
-
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"wm_mytakeaway_status_success_bkg"] forBarMetrics:UIBarMetricsDefault];
 }

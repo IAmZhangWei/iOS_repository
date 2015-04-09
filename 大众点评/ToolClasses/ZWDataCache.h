@@ -14,8 +14,8 @@
 + (void)releaseDataCache;//释放对象
 
 //存数据
-- (void)saveData:(NSData *)data withUrlString:(NSString *)url;
+- (void)saveData:(NSData *)data withDataName:(NSString *)dataName;
 //取数据
-- (NSData *)getDataWithUrlString:(NSString *)url;
+- (NSData *)getDataWithDataName:(NSString *)dataName;
 
 @end
