@@ -9,7 +9,7 @@
 #import "RefreshVC.h"
 
 
-@interface RefreshVC () 
+@interface RefreshVC ()
 
 @end
 
@@ -51,11 +51,10 @@
     //添加刷新视图
     self.headerView = [MJRefreshHeaderView header];
     self.headerView.scrollView = self.tableView;
-    
 }
 
 - (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems {
-        NSLog(@"请在子类中重写此方法:%s",__FUNCTION__);
+    NSLog(@"请在子类中重写此方法:%s",__FUNCTION__);
     return leftBarButtonItems;
 }
 
@@ -63,6 +62,18 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
     NSLog(@"请在子类中重写此方法%@", NSStringFromSelector(_cmd));
+}
+
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"请在子类中重写此方法：%@",NSStringFromSelector(_cmd));
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"请在子类中重写此方法：%@",NSStringFromSelector(_cmd));
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -203,7 +203,11 @@
 #pragma mark --添加tableViewDataSource代理
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.models.count;
+    if (tableView != self.tableView) {
+        return 1;
+    } else {
+        return self.models.count;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -226,15 +230,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *ident = @"cell";
-    
-    MainPageCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
-    
-    if (!cell) {
-        cell = [[MainPageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
+    if (tableView != self.tableView) {
+        return nil;
+    } else {
+        static NSString *ident = @"cell";
+        
+        MainPageCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
+        
+        if (!cell) {
+            cell = [[MainPageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
+        }
+        cell.model = self.models[indexPath.row];
+        return cell;
     }
-    cell.model = self.models[indexPath.row];
-    return cell;
 }
 
 #pragma mark --添加scrollView代理
@@ -334,13 +342,13 @@
  - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope NS_AVAILABLE_IOS(3_0);
  */
 #pragma mark - UISearchBarDelegate
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    return YES;
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self.navigationController pushViewController:[UIViewController new] animated:YES];
-}
+//- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+//    return YES;
+//}
+//
+//- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+//    [self.navigationController pushViewController:[UIViewController new] animated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
