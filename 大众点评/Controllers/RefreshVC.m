@@ -9,21 +9,21 @@
 #import "RefreshVC.h"
 
 
-@interface RefreshVC () <UISearchBarDelegate>
-
-@property (nonatomic, retain) UISearchBar *searchBar;
+@interface RefreshVC () 
 
 @end
 
 @implementation RefreshVC
 
 @synthesize searchBar = _searchBar;
+@synthesize mySearchDisplayController = _mySearchDisplayController;
 
 - (void)dealloc
 {
     self.searchBar = nil;
     self.headerView = nil;
     self.footerView = nil;
+    self.mySearchDisplayController = nil;
     [super dealloc];
 }
 
@@ -40,6 +40,9 @@
     UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:_searchBar];
     self.searchBar.delegate = self;
     [self.searchBar release];
+    
+    _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+    
     
     self.navigationItem.leftBarButtonItems = @[searchBarItem];
     self.navigationItem.leftBarButtonItems = [self addBarButtonItems:self.navigationItem.leftBarButtonItems];
@@ -58,6 +61,7 @@
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+    NSLog(@"请在子类中重写此方法%@", NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,11 +9,12 @@
 #import "RootVC.h"
 #import "MJRefresh.h"
 
-@interface RefreshVC : RootVC
+@interface RefreshVC : RootVC <UISearchBarDelegate>
 
 @property (nonatomic, retain) MJRefreshHeaderView *headerView;
 @property (nonatomic, retain) MJRefreshFooterView *footerView;
-
+@property (nonatomic, retain) UISearchBar *searchBar;
+@property (nonatomic, retain) UISearchDisplayController *mySearchDisplayController;
 
 - (NSArray *)addBarButtonItems:(NSArray *)leftBarButtonItems;
 
