@@ -42,7 +42,8 @@
     [self.searchBar release];
     
     _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-    
+    self.mySearchDisplayController.delegate = self;
+    self.mySearchDisplayController.da
     
     self.navigationItem.leftBarButtonItems = @[searchBarItem];
     self.navigationItem.leftBarButtonItems = [self addBarButtonItems:self.navigationItem.leftBarButtonItems];
