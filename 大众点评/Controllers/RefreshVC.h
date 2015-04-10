@@ -9,7 +9,7 @@
 #import "RootVC.h"
 #import "MJRefresh.h"
 
-@interface RefreshVC : RootVC <UISearchBarDelegate>
+@interface RefreshVC : RootVC <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) MJRefreshHeaderView *headerView;
 @property (nonatomic, retain) MJRefreshFooterView *footerView;

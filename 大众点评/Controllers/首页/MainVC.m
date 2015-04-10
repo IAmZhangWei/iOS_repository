@@ -17,7 +17,7 @@
 
 #define MAINPAGE @"mainPageData"
 
-@interface MainVC () <UITableViewDelegate, UITableViewDataSource, DPRequestDelegate, UIScrollViewDelegate>
+@interface MainVC () <DPRequestDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIPageControl *pageControll;
