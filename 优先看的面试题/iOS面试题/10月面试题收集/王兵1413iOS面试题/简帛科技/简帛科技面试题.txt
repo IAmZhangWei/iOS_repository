@@ -1,0 +1,29 @@
+1.new,delete,malloc,free关系；
+2.多态、虚函数、纯虚函数；
+3.#define ADD（x）x+x ，求5*ADD（5）的值；
+4.C++的类型安全吗；
+5.main函数执行之前，先会执行什么代码；
+6.内存分配方式及区别；
+7.struct与class之间的区别；
+8.分别写出BOOL，int，float，指针类型的变量a与“零”的比较语句；
+9.当C++程序中调用C编译器编译后的函数，为什么要加extern C；
+10.重载和重写的区别；
+11.全局变量和局部变量在内存中是否有区别？如果有，有什么区别；
+12.关键字const的含义；
+13.写一个宏MIN（），比较两个数，将较小的那个返回；
+14.找错题
+1）void main(){
+	char string[10];
+	char * str1 = "0123456789";
+	strcpy(string[10],str1);
+  }
+2) void main(){
+	char string[10],str1[10];
+	for(int i = 0;i < 10;i++){
+		str1 = 'a';
+	}
+	strcpy(string[10],str1[10]);
+  }
+15.写一个宏交换两个数；
+16.使用递归算法证明a[N]是一个递增；
+17.写一个标准strcpy的函数；
